@@ -4,10 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amazing app to help you find the nearest MBTA station</title>
+    <title>MBTA Station Application</title>
+    <style>
+      h4 {
+          color: red;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      body {
+            background-color: blanchedalmond;
+      }
+  </style>
   </head>
 
   <body>
-    <p>Hi</p>
+    <h1>Boston's MBTA Station Finder</h1>
+    <h4>Please input your location to find the nearest station available</h4>
+
+    <form action="/search" method="GET">
+      <label for="location">Enter your location in Boston:</label>
+      <input type="text" id="location" name="location">
+      <button>Submit</button>
+    </form>
+
+      <div id="output">
+        {% if location %}
+        <p>Your location: <strong>{{ location }}</strong></p>
+        <p>The closest station is: <strong>{{ nearest_stations }}</strong></p>
+        <p>This station is <strong>{{ accessible }}</strong></p>
+        {% endif %}
+      </div>
+
   </body>
 </html>
