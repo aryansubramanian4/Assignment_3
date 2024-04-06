@@ -8,7 +8,7 @@
     <style>
       h4 {
           color: red;
-          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
       }
       body {
             background-color: blanchedalmond;
@@ -20,6 +20,10 @@
     <h1>Boston's MBTA Station Finder</h1>
     <h4>Please input your location to find the nearest station available</h4>
 
+    <div style="text-align: center;">
+      <img src="https://bdc2020.o0bc.com/wp-content/uploads/2024/01/MBTA-renamed_final-1-65baf60d1669b-scaled.jpeg" alt=""width=300>
+    </div>
+
     <form action="/search" method="GET">
       <label for="location">Enter your location in Boston:</label>
       <input type="text" id="location" name="location">
@@ -29,8 +33,12 @@
       <div id="output">
         {% if location %}
         <p>Your location: <strong>{{ location }}</strong></p>
-        <p>The closest station is: <strong>{{ nearest_stations }}</strong></p>
-        <p>This station is <strong>{{ accessible }}</strong></p>
+        <p>The closest station is: <strong>{{ station[0] }}</strong></p>
+        {% if station[1] == True %}
+        <p><strong>This station is wheelchair accessible</strong></p>
+        {% else %}
+        <p><strong>This station is not wheelchair accessible</strong></p>
+        {% endif %}
         {% endif %}
       </div>
 
