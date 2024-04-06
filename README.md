@@ -1,7 +1,7 @@
 # WebApp-MBTA - Jaiveer Nalwa & Aryan Subramanian
 
 ## 1. Project Overview
-The web application designed in this project helps users in Boston find the closest MBTA stop that they can use. The code utilises APIs fetched from Mapbox and the MBTA to obtain geographic data and relevant information about nearby stations. It converts the inputted user location into latitude and longitude coordinates, which is used to query the MBTA API for information about its train stations. The front-end design uses flask servers to render an HTML template that displays the information for the user in a concise format. 
+The web application designed in this project helps users in Boston find the closest MBTA stop that they can use. The code utilises APIs fetched from Mapbox and the MBTA to obtain geographic data and relevant information about nearby stations. It converts the inputted user location into latitude and longitude coordinates, which is used to query the MBTA API for information about its train stations. The front-end design uses flask servers to render an HTML template with CSS that displays the information for the user in a concise format. 
 
 ## 2. Reflection
 1. Discuss the process point of view, including what went well and what could be improved. Provide reflections on topics such as project scoping, testing, and anything else that could have helped the team succeed. (DELETE THE QUESTION)
