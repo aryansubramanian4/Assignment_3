@@ -39,6 +39,9 @@
         {% else %}
         <p><strong>This station is not wheelchair accessible</strong></p>
         {% endif %}
+        {% if next_train %}
+        <p>Next arriving train: <strong>{{ next_train }}</strong></p>
+        {% endif %}
         {% endif %}
       </div>
 

@@ -13,11 +13,12 @@ def search():
     if location:
         station = mbta_helper.find_stop_near(location)
         if station:
-            return render_template('index.html', location = location, station = station)
+            next_train = mbta_helper.show_time(station[2])
+            return render_template('index.html', location = location, station = station, next_train = next_train)
         else:
-            return render_template('index.html', location = location, error = "Unfortunately, no nearby stations found.")
+            return render_template('index.html', location = location, error = "Unfortunately, no nearby stations were found.")
     else:
-        return render_template('index.html', error="Please enter a correct location.")
+        return render_template('index.html', error = "Please enter a correct location.")
 
 if __name__ == "__main__":
     app.run(debug=True)
